@@ -3,12 +3,14 @@ import java.util.Scanner;
 public class Task_4 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        float x = Float.parseFloat(in.nextLine());
-        if ((x >= -2 && x <= 3) || (x >= 6 && x <= 9)) {
-            System.out.println("false");
+        String N = in.nextLine();
+        int min = 9;
+        for (int i = 0; i < N.length(); ++i) {
+            int x = Character.getNumericValue(N.charAt(i));
+            if (x < min && x != 0) {
+                min = x;
+            }
         }
-        else {
-            System.out.println("true");
-        }
+        System.out.println(min);
     }
 }

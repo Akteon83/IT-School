@@ -3,18 +3,15 @@ import java.util.Scanner;
 public class Task_3 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int a = n / 3600;
-        int b = n % 3600 / 60;
-        int c = n % 60;
-        System.out.print(a + ":");
-        if (b < 10) {
-            System.out.print("0");
+        int N = in.nextInt();
+        if (N <= 14 && N >= 11) {
+            System.out.println(N + " TORTOV");
+        } else {
+            switch (N % 10) {
+                case 1 -> System.out.println(N + " TORT");
+                case 2, 3, 4 -> System.out.println(N + " TORTA");
+                default -> System.out.println(N + " TORTOV");
+            }
         }
-        System.out.print(b + ":");
-        if (c < 10) {
-            System.out.print("0");
-        }
-        System.out.println(c);
     }
 }

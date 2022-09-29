@@ -4,8 +4,18 @@ public class Task_1 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int N = in.nextInt();
-        int a = N % 10 + N % 100 / 10 + N / 100;
-        int b = N + 2 - N % 2;
-        System.out.println(a + " " + b);
+        int a = 1;
+        int b = 1;
+        int c;
+        if (N <= 2) {
+            System.out.println(1);
+        } else {
+            for (int i = 0; i < N - 2; ++i) {
+                c = b + a;
+                a = b;
+                b = c;
+            }
+            System.out.println(b);
+        }
     }
 }
